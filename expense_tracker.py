@@ -66,19 +66,29 @@ def calculate_category_totals(expenses):
 def total_categories(category_totals):
     return len(category_totals)
 
-def display_summary(category_totals,total_categories,total_amount):
+def display_summary(report_text):
+   print(report_text)
+def format_summary(category_totals,total_categories,total_amount):
+    report=""
     for category in category_totals:
-        print(category,":",category_totals[category])
+        report+=f"{category} : {category_totals[category]}\n"
+    report+=f"Total categories: {total_categories}\n"
+    report+=f"Total amount: {total_amount}"
+    return report
 
-    print(f"Total categories: {total_categories}")
-    print(f"Total amount: {total_amount}")
+def export_report(report_text):
+    with open("expense_report.txt","w") as file:
+        file.write(report_text)
 
 for i in range(3):
     expense=get_expense(categories)
     add_expense(expenses,expense)
 category_totals = calculate_category_totals(expenses)
-total_categories = len(category_totals)
+total_categories = total_categories(category_totals)
 total_amount = calculate_total(expenses)
 
-display_summary(category_totals, total_categories, total_amount)
+report_text=format_summary(category_totals,total_categories,total_amount)
+display_summary(report_text)
+export_report(report_text)
+
 
