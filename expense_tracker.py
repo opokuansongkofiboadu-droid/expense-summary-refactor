@@ -50,8 +50,35 @@ def calculate_total(expenses):
         total+=expense["amount"]
     return total
 
+def calculate_category_totals(expenses):
+    category_totals={}
+    for expense in expenses:
+        category=expense["category"]
+        amount=expense["amount"]
+        
+        if category in category_totals:
+            category_totals[category]+=amount
+        else:
+            category_totals[category]=amount    
+
+    return category_totals
+
+def total_categories(category_totals):
+    return len(category_totals)
+
+def display_summary(category_totals,total_categories,total_amount):
+    for category in category_totals:
+        print(category,":",category_totals[category])
+
+    print(f"Total categories: {total_categories}")
+    print(f"Total amount: {total_amount}")
+
 for i in range(3):
     expense=get_expense(categories)
     add_expense(expenses,expense)
-print(expenses)
-print(calculate_total(expenses))
+category_totals = calculate_category_totals(expenses)
+total_categories = len(category_totals)
+total_amount = calculate_total(expenses)
+
+display_summary(category_totals, total_categories, total_amount)
+
