@@ -2,10 +2,15 @@ categories = ["Food", "Transport", "Books"]
 expenses = []
 
 def clean_category(category):
+    """Remove whitespace,standardized capitalization and returns clean category"""
     return category.strip().title()
+
 def validate_category(category,categories):
+    """returns boolean based on whether category in categories"""
     return category in categories
+
 def get_category(categories):
+    """Keeps asking user until an acceptable input is given"""
     while True:
         
         category=input("Enter your category: ")
