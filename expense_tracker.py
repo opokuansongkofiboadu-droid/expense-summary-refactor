@@ -91,4 +91,3 @@ report_text=format_summary(category_totals,total_categories,total_amount)
 display_summary(report_text)
 export_report(report_text)
 
-
