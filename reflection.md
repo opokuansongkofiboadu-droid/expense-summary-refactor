@@ -1,0 +1,4 @@
+This week helped me understand how much easier it is to work with code that has been properly organized. Topics such as decomposition, single responsibility, and refactoring helped me organize my code better and appreciate coding more.
+One refactor that made the program safer was reducing the dependency of functions on global variables. I switched to adding parameters to functions instead of depending on global variables. If I continue doing this, it will go a long way in helping me understand the requirements of functions and reduce confusion when reading or modifying code.
+Before this week, I did not really understand how Git worked. However, after completing this week’s tasks, I can safely say that I am more comfortable with the Git workflow. I also understand the importance of tracking progress through meaningful commits, branches, and merges while developing a program.
+

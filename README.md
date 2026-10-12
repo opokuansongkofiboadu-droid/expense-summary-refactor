@@ -34,3 +34,7 @@ Transport : 80.0
 Books : 60.0
 Total categories: 3
 Total amount: 230.0
+
+## Current Limitation
+
+The current CLI requires exactly three expense records to be entered. Because of this, an empty dataset cannot occur through normal program use.
